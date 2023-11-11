@@ -31,7 +31,19 @@ These instructions will get you a copy of the project up and running on your loc
    ```bash
    npm install
    ```
+   
+### Setting Up OpenAI API Key
 
+1. **Obtain an API key from OpenAI**
+   - Visit [OpenAI's website](https://openai.com/) and sign up to get an API key.
+
+2. **Update the Gpt.js file**
+   - Navigate to `BingoVisionApp/services/Gpt.js`.
+   - Replace the placeholder text with your OpenAI API key:
+     ```javascript
+     const API_KEY = 'REPLACE_WITH_OPENAI_API_KEY';
+     ```
+     
 ### iOS Setup
 
 1. **Open the project in Xcode**
@@ -60,18 +72,6 @@ These instructions will get you a copy of the project up and running on your loc
    npx react-native run-android
    ```
    - This will build the app and launch it on a connected Android device or emulator.
-
-### Setting Up OpenAI API Key
-
-1. **Obtain an API key from OpenAI**
-   - Visit [OpenAI's website](https://openai.com/) and sign up to get an API key.
-
-2. **Update the Gpt.js file**
-   - Navigate to `BingoVisionApp/services/Gpt.js`.
-   - Replace the placeholder text with your OpenAI API key:
-     ```javascript
-     const API_KEY = 'REPLACE_WITH_OPENAI_API_KEY';
-     ```
 
 ## Authors
 
