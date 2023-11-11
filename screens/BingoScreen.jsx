@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react';
-import LinearGradient from 'react-native-linear-gradient'; // Import LinearGradient
 
 import {
   Button,
@@ -15,7 +14,8 @@ import {
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {BingoLogic} from '../services/BingoLogic';
 
-// Define the constant array for bingo items
+// Pre-defined items for demo
+// @TODO - random items that might be found in a given location
 const BINGO_ITEMS = [
   {id: 1, label: 'Stop Sign'},
   {id: 2, label: 'Dog'},
@@ -130,35 +130,28 @@ const BingoScreen = ({navigation, route}) => {
   };
 
   return (
-    <LinearGradient
-      colors={['#00d4ff', '#f2e8cc', '#00d4ff']} // Array of colors to create the gradient
-      style={styles.gradient}>
-      <View style={styles.container}>
-        <FlatList
-          data={bingoItems}
-          renderItem={renderBingoItem}
-          keyExtractor={item => item.id.toString()}
-          numColumns={NUM_COLUMNS}
-          contentContainerStyle={styles.flatListContent}
-        />
-      </View>
-    </LinearGradient>
+    <View style={styles.container}>
+      <FlatList
+        data={bingoItems}
+        renderItem={renderBingoItem}
+        keyExtractor={item => item.id.toString()}
+        numColumns={NUM_COLUMNS}
+        contentContainerStyle={styles.flatListContent}
+      />
+    </View>
   );
 };
 
 // Constants for styling
 const MARGIN = 0; // Margin for each item
-const BORDER_WIDTH = 2; // Border width for each item
-const NUM_COLUMNS = 5; // Since you want a 5x5 grid
+const BORDER_WIDTH = 2;
+const NUM_COLUMNS = 5;
 const {width} = Dimensions.get('window');
 // Subtract total margins and border widths from the width
 const ITEM_SIZE =
   (width - NUM_COLUMNS * (MARGIN * 2 + BORDER_WIDTH * 2)) / NUM_COLUMNS;
 
 const styles = StyleSheet.create({
-  gradient: {
-    flex: 1,
-  },
   container: {
     flex: 1,
     backgroundColor: '#fefefe',
@@ -173,10 +166,10 @@ const styles = StyleSheet.create({
     width: ITEM_SIZE,
     height: ITEM_SIZE,
     borderWidth: BORDER_WIDTH,
-    borderColor: '#FFA07A', // Consider using dynamic vibrant colors
+    borderColor: '#FFA07A',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#FFF', // Consider using a subtle background pattern
+    backgroundColor: '#FFF',
     margin: MARGIN,
     padding: 3,
     elevation: 3, // Shadow for Android
@@ -185,7 +178,6 @@ const styles = StyleSheet.create({
   },
   itemFound: {
     backgroundColor: '#90EE90', // Consider using a gradient background
-    // Add more styling for found items if needed
   },
   bingoItemText: {
     fontSize: ITEM_SIZE * 0.2,
@@ -200,7 +192,5 @@ const styles = StyleSheet.create({
     resizeMode: 'cover',
   },
 });
-
-// Remember to import the required modules for background images and animations.
 
 export default BingoScreen;

@@ -18,7 +18,7 @@ class Gpt {
   async createChatCompletion(messages) {
     try {
       const response = await this.client.post('', {
-        model: 'gpt-4-vision-preview', // Replace with the appropriate model
+        model: 'gpt-4-vision-preview', // GPT model
         messages: messages,
       });
       return response.data;

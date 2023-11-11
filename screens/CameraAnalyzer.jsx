@@ -11,12 +11,12 @@ import {
   ActivityIndicator,
 } from 'react-native';
 import {RNCamera} from 'react-native-camera';
-import Gpt from '../services/Gpt'; // Ensure you have a Gpt.js that exports an instance of a Gpt class
+import Gpt from '../services/Gpt';
 
 const CameraAnalyzer = ({route, navigation}) => {
   const cameraRef = useRef(null);
   const [isRecording, setIsRecording] = useState(false);
-  const [isLoading, setIsLoading] = useState(false); // Added loading state
+  const [isLoading, setIsLoading] = useState(false);
   const [hasPermission, setHasPermission] = useState(null);
   const [imageUri, setImageUri] = useState(null); // State to hold the captured image URI
   const [successMessage, setSuccessMessage] = useState('');
@@ -102,7 +102,6 @@ const CameraAnalyzer = ({route, navigation}) => {
   };
 
   // Render the loading indicator when the image is being processed
-  // Update the loading indicator render to include the success message
   if (isLoading || successMessage) {
     return (
       <View style={styles.loadingContainer}>
@@ -152,8 +151,8 @@ const styles = StyleSheet.create({
     padding: 15,
     paddingHorizontal: 20,
     alignSelf: 'center',
-    position: 'absolute', // Position absolutely
-    bottom: 20, // Distance from the bottom
+    position: 'absolute',
+    bottom: 20,
     margin: 20,
   },
   buttonText: {

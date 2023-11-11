@@ -69,7 +69,7 @@ export class BingoLogic {
     console.log('running backend checkBingo');
 
     this.setBingoItems(items => {
-      const size = Math.sqrt(items.length); // Assuming a square board
+      const size = Math.sqrt(items.length); // square board
       let hasBingo = false;
 
       // Check rows and columns
