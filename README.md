@@ -1,4 +1,4 @@
-# BingoVisionApp
+# Vision-Bingo
 
 BingoVisionApp is a React Native mobile application that combines the fun of bingo with real-world object detection.
 
